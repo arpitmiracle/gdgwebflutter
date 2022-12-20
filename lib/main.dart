@@ -16,25 +16,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-        builder: (context,orientation,deviceType) {
-        return MaterialApp(
-          builder: (context, widget) => ResponsiveWrapper.builder(
-              ClampingScrollWrapper.builder(context, widget!),
-              defaultScale: true,
-              minWidth: 480,
-              defaultName: MOBILE,
-              breakpoints: [
-                const ResponsiveBreakpoint.autoScale(480, name: MOBILE),
-                const ResponsiveBreakpoint.resize(600, name: MOBILE),
-                const ResponsiveBreakpoint.resize(850, name: TABLET),
-                const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
-              ],
-              background: Container(color: background)),
-          home:  HomePage(),
-          debugShowCheckedModeBanner: false,
-        );
-      }
+    return MaterialApp(
+      builder: (context, widget) => ResponsiveWrapper.builder(
+          ClampingScrollWrapper.builder(context, widget!),
+          defaultScale: true,
+          minWidth: 480,
+          defaultName: MOBILE,
+          breakpoints: [
+            const ResponsiveBreakpoint.autoScale(480, name: MOBILE),
+            const ResponsiveBreakpoint.resize(600, name: MOBILE),
+            const ResponsiveBreakpoint.resize(850, name: TABLET),
+            const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
+          ],
+          background: Container(color: background)),
+      home:  HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

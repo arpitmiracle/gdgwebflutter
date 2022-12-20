@@ -53,7 +53,7 @@ class HomePage extends HookWidget {
           DrawerTitles(title: "JOB OPPORTUNITIES",selectedIndex: selectedIndex,index:4,),
           DrawerTitles(title: "BADGE",selectedIndex: selectedIndex,index:5,),
           DrawerTitles(title: "BLOG",selectedIndex: selectedIndex,index:6,),
-          SizedBox(width: 8.w,),
+          SizedBox(width: ResponsiveWrapper.of(context).screenWidth * 0.08,),
         ],
         elevation: 0,
       ),

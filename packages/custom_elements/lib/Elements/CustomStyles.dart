@@ -13,7 +13,7 @@ class CustomStyles {
         fontFamily: fontFamily,
         fontStyle: fontStyle,
         decoration: textDecoration,
-        fontSize: fontSize ?? (5.sp),
+        fontSize: fontSize ?? (14),
         color: fontColor,
         fontWeight: fontWeight);
   }
