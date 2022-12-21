@@ -6,6 +6,13 @@ class ImagePath {
   static String imgTeam = "assets/images/img_team.jpg";
   static String imgLogo = "assets/images/img_logo.png";
 
+  static String imgNews1 = "assets/images/latestnews/news1.jpg";
+  static String imgNews2 = "assets/images/latestnews/news2.jpg";
+
+  static String imgHighlight1 = "assets/images/highlights/highlight1.jpeg";
+  static String imgHighlight2 = "assets/images/highlights/highlight2.jpeg";
+  static String imgHighlight3 = "assets/images/highlights/highlight3.jpeg";
+
   static String imgAbhilashaVyas = "assets/images/speakers/abhilasha_vyas.jpg";
   static String imgDhananjayKumar = "assets/images/speakers/dhananjay_kumar.jpg";
   static String imgKrupaGaliya = "assets/images/speakers/krupa_galiya.jpg";
