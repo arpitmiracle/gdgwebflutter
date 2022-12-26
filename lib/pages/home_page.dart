@@ -9,16 +9,11 @@ import 'Home/HomeScreen.dart';
 
 class HomePage extends HookWidget {
   HomePage({Key? key}) : super(key: key);
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    TabController tabController = useTabController(initialLength: 7);
     ValueNotifier<int> selectedIndex = useState(0);
-
-    useEffect(() {
-
-    }, []);
 
     return Scaffold(
       key: scaffoldKey,
@@ -28,7 +23,7 @@ class HomePage extends HookWidget {
         backgroundColor: Colors.white,
         leading: ResponsiveVisibility(
           visible: false,
-          visibleWhen: [
+          visibleWhen: const [
             Condition.equals(name: MOBILE),
           ],
           child: IconButton(
@@ -40,25 +35,54 @@ class HomePage extends HookWidget {
         ),
         title: ResponsiveVisibility(
           visible: false,
-          visibleWhen: [
+          visibleWhen: const [
             Condition.largerThan(name: MOBILE),
           ],
           child: Image.asset(ImagePath.icLogo,),
         ),
         actions: [
-          DrawerTitles(title: "HOME",selectedIndex: selectedIndex,index: 0),
-          DrawerTitles(title: "SPEAKERS",selectedIndex: selectedIndex,index: 1,),
-          DrawerTitles(title: "SCHEDULE",selectedIndex: selectedIndex,index:2,),
-          DrawerTitles(title: "TEAM",selectedIndex: selectedIndex,index:3,),
-          DrawerTitles(title: "JOB OPPORTUNITIES",selectedIndex: selectedIndex,index:4,),
-          DrawerTitles(title: "BADGE",selectedIndex: selectedIndex,index:5,),
-          DrawerTitles(title: "BLOG",selectedIndex: selectedIndex,index:6,),
+          HeaderTitles(title: "HOME",selectedIndex: selectedIndex,index: 0),
+          HeaderTitles(title: "SPEAKERS",selectedIndex: selectedIndex,index: 1,),
+          HeaderTitles(title: "SCHEDULE",selectedIndex: selectedIndex,index:2,),
+          HeaderTitles(title: "TEAM",selectedIndex: selectedIndex,index:3,),
+          HeaderTitles(title: "JOB OPPORTUNITIES",selectedIndex: selectedIndex,index:4,),
+          HeaderTitles(title: "BADGE",selectedIndex: selectedIndex,index:5,),
+          HeaderTitles(title: "BLOG",selectedIndex: selectedIndex,index:6,),
           SizedBox(width: ResponsiveWrapper.of(context).screenWidth * 0.08,),
         ],
         elevation: 0,
       ),
       drawer: Drawer(
-
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              margin: EdgeInsets.zero,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(ImagePath.icLogo,),
+                  SizedBox(height: ResponsiveWrapper.of(context).screenHeight * 0.02),
+                  CustomTitle(
+                    title: "17th December, 2022",
+                    fontColor: CustomColors.black,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  CustomText(text: "Ahmedabad, Gujarat",color: CustomColors.grey ),
+                ],
+              ),
+            ),
+            SizedBox(height: 15,),
+            DrawerTitles(title: "Home",selectedIndex: selectedIndex,index: 0),
+            DrawerTitles(title: "Speakers",selectedIndex: selectedIndex,index: 1,),
+            DrawerTitles(title: "Schedule",selectedIndex: selectedIndex,index:2,),
+            DrawerTitles(title: "Team",selectedIndex: selectedIndex,index:3,),
+            DrawerTitles(title: "Job Opportunities",selectedIndex: selectedIndex,index:4,),
+            DrawerTitles(title: "Badge",selectedIndex: selectedIndex,index:5,),
+            DrawerTitles(title: "Blog",selectedIndex: selectedIndex,index:6,),
+          ],
+        ),
       ),
       body: Container(
         child: getBody(selectedIndex.value)
@@ -67,7 +91,7 @@ class HomePage extends HookWidget {
   }
 
   Widget getBody(int selectedVal){
-    Widget widget = HomeScreen();
+    Widget widget = const HomeScreen();
     switch (selectedVal){
       case 1:
         widget = Scaffold(body: CustomText(text: "SPEAKERS"),);
@@ -90,6 +114,7 @@ class HomePage extends HookWidget {
     }
     return widget;
   }
+
 }
 
 
@@ -98,6 +123,25 @@ class DrawerTitles extends StatelessWidget {
   ValueNotifier<int> selectedIndex;
   int index;
   DrawerTitles({Key? key,required this.title,required this.selectedIndex,required this.index,}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: CustomText(text: title,color: selectedIndex.value == index ? CustomColors.black : CustomColors.subtitle,fontSize: 16,),
+      dense: true,
+      onTap: () {
+        Navigator.pop(context);
+        selectedIndex.value = index;
+      },
+    );
+  }
+}
+
+class HeaderTitles extends StatelessWidget {
+  String title;
+  ValueNotifier<int> selectedIndex;
+  int index;
+  HeaderTitles({Key? key,required this.title,required this.selectedIndex,required this.index,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +163,7 @@ class DrawerTitles extends StatelessWidget {
             onPressed: () {
               selectedIndex.value = index;
             },
-            child: CustomText(text: title,color: selectedIndex.value == index ? CustomColors.black : CustomColors.subtitle ),
+            child: CustomText(text: title,color: selectedIndex.value == index ? CustomColors.black : CustomColors.subtitle,fontSize: 16, ),
           ),
         ),
       ),

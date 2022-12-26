@@ -45,11 +45,13 @@ var HighlightsData = [
 var LatestNewsData = [
   {
     "title" : "We're looking for speakers",
+    "date" : "NOV 12, 2022",
     "description" : "GDG DevFest Ahmedabad 2022 has been announced! The 9th edition of the biggest conference about Google technologies in Ahmedabad will take place on 17th December 2022 in the Heritage city of India.",
     "image" : ImagePath.imgNews1
   },
   {
     "title" : "Announcing GDG DevFest Ahmedabad 2022",
+    "date" : "SEP 12, 2022",
     "description" : "It is official. GDG DevFest Ahmedabad 2022 is going to take place in Ahmedabad, 17th December 2022.",
     "image" : ImagePath.imgNews2
   },

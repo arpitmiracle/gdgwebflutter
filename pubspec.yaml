@@ -76,6 +76,7 @@ flutter:
     - assets/images/speakers/
     - assets/images/highlights/
     - assets/images/latestnews/
+    - assets/images/partners/
     - assets/icons/
     - assets/data/
   # An image asset can refer to one or more resolution-specific "variants", see

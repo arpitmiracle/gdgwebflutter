@@ -15,6 +15,7 @@ class CustomStyles {
         decoration: textDecoration,
         fontSize: fontSize ?? (14),
         color: fontColor,
+        decorationStyle: TextDecorationStyle.solid,
         fontWeight: fontWeight);
   }
 }

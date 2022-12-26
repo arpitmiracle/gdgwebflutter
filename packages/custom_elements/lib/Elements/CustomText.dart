@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:custom_elements/custom_elements.dart';
 
 class CustomText extends StatelessWidget {
-  CustomText({required this.text, this.color,this.fontWeight,this.maxLines,this.fontSize,this.textAlign});
+  CustomText({required this.text, this.color,this.fontWeight,this.maxLines,this.fontSize,this.textAlign,this.textDecoration});
 
   String text;
   Color? color;
@@ -12,6 +12,7 @@ class CustomText extends StatelessWidget {
   int? maxLines;
   TextOverflow? overflow;
   TextAlign? textAlign;
+  TextDecoration? textDecoration;
 
 
   @override
@@ -24,6 +25,7 @@ class CustomText extends StatelessWidget {
       style: CustomStyles.textStyle(
           fontSize: fontSize,
           fontColor: color,
+          textDecoration: textDecoration,
           fontWeight: fontWeight
       ),
     );
