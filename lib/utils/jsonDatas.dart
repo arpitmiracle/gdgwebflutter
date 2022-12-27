@@ -1,4 +1,5 @@
-import 'package:gdgwebflutter/components/components.dart';
+
+import 'package:gdgwebflutter/components/imagepath.dart';
 
 var RockstarSpeakers = [
   {

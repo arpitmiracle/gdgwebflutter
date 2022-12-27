@@ -13,8 +13,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
   Widget? suffixIcon;
   bool isSafeArea;
 
-
-   CustomAppBar({Key? key, required this.title,this.height,this.prefixAction,this.suffixIcon,this.prefixIcon,this.suffixAction,this.iconSize,this.customTitle,this.isSafeArea = true}) : super(key: key);
+  CustomAppBar({Key? key, required this.title,this.height,this.prefixAction,this.suffixIcon,this.prefixIcon,this.suffixAction,this.iconSize,this.customTitle,this.isSafeArea = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

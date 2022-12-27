@@ -16,6 +16,6 @@ class CustomColors {
   static const blue = Colors.blue;
   static const transparent = Colors.transparent;
   static const Color success = Color(0xff10DC60);
-
+  static const Color background = Color(0xFFF8F9FA);
 
 }

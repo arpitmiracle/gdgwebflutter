@@ -1,6 +1,6 @@
 import 'package:custom_elements/custom_elements.dart';
 import 'package:flutter/material.dart';
-import 'package:gdgwebflutter/components/components.dart';
+import 'package:gdgwebflutter/components/imagepath.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeBgRequest extends StatelessWidget {

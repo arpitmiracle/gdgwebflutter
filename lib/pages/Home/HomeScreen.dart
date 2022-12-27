@@ -1,7 +1,7 @@
 import 'package:custom_elements/custom_elements.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:gdgwebflutter/components/components.dart';
+import 'package:gdgwebflutter/components/imagepath.dart';
 import 'package:gdgwebflutter/utils/jsonDatas.dart';
 import 'package:gdgwebflutter/utils/utils.dart';
 import 'package:responsive_framework/responsive_framework.dart';
