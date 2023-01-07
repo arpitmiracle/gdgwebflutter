@@ -1,6 +1,7 @@
 import 'package:custom_elements/custom_elements.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gdgwebflutter/components/app_strings.dart';
 import 'package:gdgwebflutter/components/imagepath.dart';
 import 'package:gdgwebflutter/utils/jsonDatas.dart';
 import 'package:gdgwebflutter/utils/utils.dart';
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomTitle(
-                  title: "About",
+                  title: AppStrings.about,
                   fontColor: CustomColors.black,
                 ),
                 AboutTitleNdButtons(
@@ -39,11 +40,11 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     AboutAttendRecord(
                       title: "500+",
-                      subtitle: "Attendees",
+                      subtitle: AppStrings.attendees,
                     ),
                     AboutAttendRecord(
                       title: "1",
-                      subtitle: "Days",
+                      subtitle: AppStrings.days,
                     ),
                   ],
                 ),
@@ -52,17 +53,17 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     AboutAttendRecord(
                       title: "20+",
-                      subtitle: "Sessions",
+                      subtitle: AppStrings.sessions,
                     ),
                     AboutAttendRecord(
                       title: "3",
-                      subtitle: "Tracks",
+                      subtitle: AppStrings.tracks,
                     ),
                   ],
                 ),
                 SizedBox(height: 30,),
                 CustomTitle(
-                  title: "Rockstar speakers",
+                  title: AppStrings.rockstar_speakers,
                   fontColor: CustomColors.black,
                 ),
                 RockStartSpeakersView(),
@@ -129,16 +130,16 @@ class PartnersView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTitle(
-          title: "Partners",
+          title: AppStrings.partners,
           fontColor: CustomColors.black,
         ),
-        getImages(context,"Title Sponsor",titleSponsors),
-        getImages(context,"Platinum Sponsor",platinumSponsors),
-        getImages(context,"Silver Sponsor",silverSponsors),
-        getImages(context,"CFP Sponsor",cfpPartners),
-        getImages(context,"Ticketing Sponsor",ticketingPartners),
-        getImages(context,"Template Sponsor",templatePartners),
-        getImages(context,"Partner Communities",partnerCommunity),
+        getImages(context,AppStrings.title_sponsor,titleSponsors),
+        getImages(context,AppStrings.platinum_sponsor,platinumSponsors),
+        getImages(context,AppStrings.silver_sponsor,silverSponsors),
+        getImages(context,AppStrings.cfp_sponsor,cfpPartners),
+        getImages(context,AppStrings.ticketing_sponsor,ticketingPartners),
+        getImages(context,AppStrings.template_sponsor,templatePartners),
+        getImages(context,AppStrings.partner_communities,partnerCommunity),
       ],
     );
   }
@@ -217,7 +218,7 @@ class Footer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      CustomText(text: "FOLLOW US",color: CustomColors.grey,),
+                      CustomText(text: AppStrings.follow_us,color: CustomColors.grey,),
                       SizedBox(width: 8,),
                       IconButton(
                         onPressed: () {
@@ -284,7 +285,7 @@ class Footer extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: ResponsiveWrapper.of(context).isMobile ? 0 : 20),
                   child: Row(
                     children: [
-                      CustomText(text: "EMAIL US",color: CustomColors.grey,textDecoration: TextDecoration.underline),
+                      CustomText(text: AppStrings.email_us,color: CustomColors.grey,textDecoration: TextDecoration.underline),
                     ],
                   ),
                 ),
@@ -301,6 +302,7 @@ class Footer extends StatelessWidget {
             // columnMainAxisSize: MainAxisSize.min,
             // rowMainAxisSize: MainAxisSize.min,
             columnCrossAxisAlignment: CrossAxisAlignment.start,
+            rowCrossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ResponsiveRowColumnItem(
                 child: Padding(
@@ -310,13 +312,13 @@ class Footer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(height: 10,),
-                      CustomTitle(title: "About",fontColor: CustomColors.grey,fontWeight: FontWeight.w500,),
+                      CustomTitle(title: AppStrings.about,fontColor: CustomColors.black.withOpacity(0.7),fontWeight: FontWeight.w500,),
                       SizedBox(height: 10,),
-                      getTitle("GDG Ahmedabad"),
-                      getTitle("Meet the Team"),
-                      getTitle("Google Developers"),
-                      getTitle("GDG Platform"),
-                      getTitle("DevFest"),
+                      getTitle(AppStrings.gdg_ahmedabad),
+                      getTitle(AppStrings.meet_the_team),
+                      getTitle(AppStrings.google_developers),
+                      getTitle(AppStrings.gdg_platform),
+                      getTitle(AppStrings.devfest),
                     ],
                   ),
                 ),
@@ -330,7 +332,7 @@ class Footer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(height: 10,),
-                      CustomTitle(title: "Explore Past DevFests",fontColor: CustomColors.grey,fontWeight: FontWeight.w500,),
+                      CustomTitle(title: AppStrings.explore_past_devfest,fontColor: CustomColors.black.withOpacity(0.7),fontWeight: FontWeight.w500,),
                       SizedBox(height: 10,),
                       getTitle("DevfestAhm 2017"),
                       getTitle("DevfestAhm 2018"),
@@ -348,7 +350,7 @@ class Footer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(height: 10,),
-                      CustomTitle(title: "Event Resources",fontColor: CustomColors.grey,fontWeight: FontWeight.w500,),
+                      CustomTitle(title: AppStrings.event_resources,fontColor: CustomColors.black.withOpacity(0.7),fontWeight: FontWeight.w500,),
                       SizedBox(height: 10,),
                       getTitle("Announcing DevFestAhm 2022"),
                     ],
@@ -383,7 +385,7 @@ class LatestNews extends StatelessWidget {
       children: [
         SizedBox(height: 30,),
         CustomTitle(
-          title: "The latest news",
+          title: AppStrings.the_latest_news,
           fontColor: CustomColors.black,
         ),
         SizedBox(height: 20,),

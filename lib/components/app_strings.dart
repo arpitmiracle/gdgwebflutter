@@ -1,0 +1,33 @@
+class AppStrings {
+  static String home = "Home";
+  static String speakers = "Speakers";
+  static String schedule = "Schedule";
+  static String team = "Team";
+  static String jobOpportunities = "Job Opportunities";
+  static String badge = "Badge";
+  static String blog = "Blog";
+  static String about = "About";
+  static String attendees = "Attendees";
+  static String days = "Days";
+  static String sessions = "Sessions";
+  static String rockstar_speakers = "Rockstar speakers";
+  static String tracks = "Tracks";
+  static String title_sponsor = "Title Sponsor";
+  static String platinum_sponsor = "Platinum Sponsor";
+  static String silver_sponsor = "Silver Sponsor";
+  static String cfp_sponsor = "CFP Sponsor";
+  static String ticketing_sponsor = "Ticketing Sponsor";
+  static String template_sponsor = "Template Sponsor";
+  static String partner_communities = "Partner Communities";
+  static String follow_us = "FOLLOW US";
+  static String email_us = "EMAIL US";
+  static String gdg_ahmedabad = "GDG Ahmedabad";
+  static String meet_the_team = "Meet the Team";
+  static String google_developers = "Google Developers";
+  static String gdg_platform = "GDG Platform";
+  static String devfest = "DevFest";
+  static String explore_past_devfest = "Explore Past DevFests";
+  static String event_resources = "Event Resources";
+  static String the_latest_news = "The latest news";
+  static String partners = "Partners";
+}

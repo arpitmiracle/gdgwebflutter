@@ -2,6 +2,7 @@
 import 'package:custom_elements/custom_elements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:gdgwebflutter/components/app_strings.dart';
 import 'package:gdgwebflutter/components/imagepath.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -41,13 +42,13 @@ class HomePage extends HookWidget {
           child: Image.asset(ImagePath.icLogo,),
         ),
         actions: [
-          HeaderTitles(title: "HOME",selectedIndex: selectedIndex,index: 0),
-          HeaderTitles(title: "SPEAKERS",selectedIndex: selectedIndex,index: 1,),
-          HeaderTitles(title: "SCHEDULE",selectedIndex: selectedIndex,index:2,),
-          HeaderTitles(title: "TEAM",selectedIndex: selectedIndex,index:3,),
-          HeaderTitles(title: "JOB OPPORTUNITIES",selectedIndex: selectedIndex,index:4,),
-          HeaderTitles(title: "BADGE",selectedIndex: selectedIndex,index:5,),
-          HeaderTitles(title: "BLOG",selectedIndex: selectedIndex,index:6,),
+          HeaderTitles(title: AppStrings.home,selectedIndex: selectedIndex,index: 0),
+          HeaderTitles(title: AppStrings.speakers,selectedIndex: selectedIndex,index: 1,),
+          HeaderTitles(title: AppStrings.schedule,selectedIndex: selectedIndex,index:2,),
+          HeaderTitles(title: AppStrings.team,selectedIndex: selectedIndex,index:3,),
+          HeaderTitles(title: AppStrings.jobOpportunities,selectedIndex: selectedIndex,index:4,),
+          HeaderTitles(title: AppStrings.badge,selectedIndex: selectedIndex,index:5,),
+          HeaderTitles(title: AppStrings.blog,selectedIndex: selectedIndex,index:6,),
           SizedBox(width: ResponsiveWrapper.of(context).screenWidth * 0.08,),
         ],
         elevation: 0,
@@ -74,13 +75,13 @@ class HomePage extends HookWidget {
               ),
             ),
             SizedBox(height: 15,),
-            DrawerTitles(title: "Home",selectedIndex: selectedIndex,index: 0),
-            DrawerTitles(title: "Speakers",selectedIndex: selectedIndex,index: 1,),
-            DrawerTitles(title: "Schedule",selectedIndex: selectedIndex,index:2,),
-            DrawerTitles(title: "Team",selectedIndex: selectedIndex,index:3,),
-            DrawerTitles(title: "Job Opportunities",selectedIndex: selectedIndex,index:4,),
-            DrawerTitles(title: "Badge",selectedIndex: selectedIndex,index:5,),
-            DrawerTitles(title: "Blog",selectedIndex: selectedIndex,index:6,),
+            DrawerTitles(title: AppStrings.home,selectedIndex: selectedIndex,index: 0),
+            DrawerTitles(title: AppStrings.speakers,selectedIndex: selectedIndex,index: 1,),
+            DrawerTitles(title: AppStrings.schedule,selectedIndex: selectedIndex,index:2,),
+            DrawerTitles(title: AppStrings.team,selectedIndex: selectedIndex,index:3,),
+            DrawerTitles(title: AppStrings.jobOpportunities,selectedIndex: selectedIndex,index:4,),
+            DrawerTitles(title: AppStrings.badge,selectedIndex: selectedIndex,index:5,),
+            DrawerTitles(title: AppStrings.blog,selectedIndex: selectedIndex,index:6,),
           ],
         ),
       ),
@@ -163,7 +164,7 @@ class HeaderTitles extends StatelessWidget {
             onPressed: () {
               selectedIndex.value = index;
             },
-            child: CustomText(text: title,color: selectedIndex.value == index ? CustomColors.black : CustomColors.subtitle,fontSize: 16, ),
+            child: CustomText(text: title.toUpperCase(),color: selectedIndex.value == index ? CustomColors.black : CustomColors.subtitle,fontSize: 16, ),
           ),
         ),
       ),
